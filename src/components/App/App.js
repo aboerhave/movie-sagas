@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import {HashRouter as Router, Route} from 'react-router-dom';
 import './App.css';
+import Home from '../Home/Home';
+import Search from '../Search/Search';
+import AddMovie from '../AddMovie/AddMovie';
 
 class App extends Component {
   // Renders the entire app on the DOM
@@ -10,8 +13,10 @@ class App extends Component {
         <h1>Movies!</h1>
         <Router>
           {/* ADD PAGES! */}
+          <Home />
+          <Search />
+          <AddMovie />
         </Router>
-        <p>Empty Page</p>
       </div>
     );
   }
