@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
-class Search extends Component {
+class Details extends Component {
     
     render(){
         return(
@@ -14,4 +14,4 @@ const mapReduxStateToProps = (reduxState) => ({
     reduxState
 });
 
-export default connect(mapReduxStateToProps)(Search);
+export default connect(mapReduxStateToProps)(Details);

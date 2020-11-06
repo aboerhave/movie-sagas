@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {HashRouter as Router, Route} from 'react-router-dom';
 import './App.css';
 import Home from '../Home/Home';
-import Search from '../Search/Search';
+import Details from '../Details/Details';
 import AddMovie from '../AddMovie/AddMovie';
 
 class App extends Component {
@@ -14,7 +14,7 @@ class App extends Component {
         <Router>
           {/* ADD PAGES! */}
           <Home />
-          <Search />
+          <Details />
           <AddMovie />
         </Router>
       </div>

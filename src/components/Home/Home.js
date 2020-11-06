@@ -3,6 +3,15 @@ import {connect} from 'react-redux';
 
 class Home extends Component {
     
+    componentDidMount = () => {
+        this.getMovies();
+    }
+
+    getMovies = () => {
+        
+        
+    }
+
     render(){
         return(
             <h1>home</h1>
