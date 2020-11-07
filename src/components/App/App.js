@@ -14,8 +14,8 @@ class App extends Component {
         <Router>
           {/* ADD PAGES! */}
           <Home />
-          <Details />
-          <AddMovie />
+          {/* <Details /> */}
+          {/* <AddMovie /> */}
         </Router>
       </div>
     );

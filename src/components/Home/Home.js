@@ -6,10 +6,10 @@ class Home extends Component {
     componentDidMount = () => {
         this.getMovies();
     }
-
+    
     getMovies = () => {
-        
-        
+        // need to send dispatch to saga to make get request here
+        this.props.dispatch({type: "GET_ALL_MOVIES"});
     }
 
     render(){

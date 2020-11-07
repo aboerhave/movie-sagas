@@ -39,4 +39,15 @@ router.post('/', (req, res) => {
   })
 })
 
+router.get('/', (req,res) => {
+  let queryText = `select * from movies;`;
+  pool.query(queryText).then((result) => {
+    res.send(result.rows);
+    
+  }).catch((error) => {
+    console.log('error in router get all movies request', error);    
+    res.sendStatus(500);
+  });
+})
+
 module.exports = router;
