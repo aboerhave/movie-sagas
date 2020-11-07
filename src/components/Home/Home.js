@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import './Home.css';
 
 class Home extends Component {
     
@@ -14,7 +15,20 @@ class Home extends Component {
 
     render(){
         return(
-            <h1>home</h1>
+            <>
+                <h1>home</h1>
+                {/* {JSON.stringify(this.props.reduxState.movies)} */}
+                {this.props.reduxState.movies.map((movie) => {
+                    return (
+                        <div key={movie.id} className="card">
+                            <h3>{movie.title}</h3>
+                            <button className="picButton">
+                                <img src={movie.poster} width="185px"/>
+                            </button>
+                        </div>
+                    )
+                })}
+            </>
         )
     }
 }

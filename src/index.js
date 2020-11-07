@@ -20,7 +20,6 @@ function* rootSaga() {
 function* getMovies() {
     try {
     const allMovieResponse = yield axios.get('/api/movie');
-    console.log('allMovieResponse.data', allMovieResponse.data);
     yield put({type: 'ALL_MOVIES_FROM_DB', payload: allMovieResponse.data});
 
     
