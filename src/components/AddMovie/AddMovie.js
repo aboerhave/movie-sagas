@@ -5,7 +5,13 @@ class AddMovie extends Component {
     
     render(){
         return(
-            <h1>add movie</h1>
+            <>
+                <h1>add movie</h1>
+                <input type="text"></input>
+                <input type="text"></input>
+                <textarea ></textarea>
+                <select> </select>
+            </>
         )
     }
 }
