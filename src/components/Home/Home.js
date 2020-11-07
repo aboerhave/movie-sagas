@@ -22,8 +22,9 @@ class Home extends Component {
                     return (
                         <div key={movie.id} className="card">
                             <h3>{movie.title}</h3>
-                            <button className="picButton">
-                                <img src={movie.poster} width="185px"/>
+                            {/* <button className="picButton" style={{backgroundImage:'url(/images/harry-potter.jpg)'}}> */}
+                            <button className="picButton" style={{backgroundImage:`url(${movie.poster})`}}>
+                                {/* <img src={movie.poster} width="185px"/> */}
                             </button>
                         </div>
                     )
