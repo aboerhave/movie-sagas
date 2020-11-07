@@ -13,8 +13,9 @@ class Home extends Component {
         this.props.dispatch({type: "GET_ALL_MOVIES"});
     }
 
-    pictureClick = (movie) => {
-        console.log('movie clicked', movie);
+    pictureClick = (movieId) => {
+        console.log('movie clicked', movieId);
+        this.props.dispatch({type: 'GET_ONE_MOVIE', payload: movieId});
         // the app needs to load the other component here (details page)
         // programmatical routing
         this.props.history.push('/Details');
@@ -29,7 +30,7 @@ class Home extends Component {
                     return (
                         <div key={movie.id} className="card">
                             <h3>{movie.title}</h3>
-                            <button className="picButton" style={{backgroundImage:`url(${movie.poster})`}} onClick={()=>this.pictureClick(movie)}></button>
+                            <button className="picButton" style={{backgroundImage:`url(${movie.poster})`}} onClick={()=>this.pictureClick(movie.id)}></button>
                         </div>
                     )
                 })}
