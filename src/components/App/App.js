@@ -9,15 +9,16 @@ class App extends Component {
   // Renders the entire app on the DOM
   render() {
     return (
-      <div className="App">
-        <h1>Movies!</h1>
         <Router>
-          {/* ADD PAGES! */}
-          <Home />
-          {/* <Details /> */}
-          {/* <AddMovie /> */}
-        </Router>
+          <div className="App">
+          <h1>Movies!</h1>
+          {/* Only the Home component displays at exact path /
+          The rest are the paths for later */}
+          <Route exact path='/' component={Home} />
+          <Route path='/Details' component={Details} />
+          <Route path='/AddMovie' component={AddMovie} />
       </div>
+        </Router>
     );
   }
 }
