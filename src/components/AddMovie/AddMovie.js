@@ -146,10 +146,10 @@ class AddMovie extends Component {
                         </>
                         }   
                         {this.state.movie.numberOfGenres != 5 &&
-                            <button onClick={this.addGenre}>Add another genre</button>
+                            <button className="addMovieButton" onClick={this.addGenre}>Add another genre</button>
                         }
                         {this.state.movie.numberOfGenres > 1 && 
-                            <button onClick={this.removeGenre}>Remove the last genre</button>
+                            <button className="addMovieButton" onClick={this.removeGenre}>Remove the last genre</button>
                         }
                 {JSON.stringify(this.state)} <br/>
                 <button className="addMovieButton" onClick={this.returnHome}>Cancel and Return to Home</button>

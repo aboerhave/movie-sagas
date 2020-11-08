@@ -18,6 +18,12 @@ label {
     padding: 5px;
     background-color: silver;
     margin: 10px 5px 5px 5px;
+    transition-duration: .5s;
+}
+
+.addMovieButton:hover {
+    background-color: gray;
+    color: white;
 }
 
 select {
