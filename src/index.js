@@ -18,6 +18,8 @@ function* rootSaga() {
     yield takeEvery('GET_ONE_MOVIE', getOneMovie);
 }
 
+// this function gets all the movies from the database, but only includes id,
+// title, poster address, and description text
 function* getMovies() {
     try {
         const allMovieResponse = yield axios.get('/api/movie');
@@ -28,6 +30,10 @@ function* getMovies() {
     }
 }
 
+// this function gets the individual data for the movie clicked on, including
+// as many rows as there are genres associated with the movie selected, so the 
+// genres returned in each row are different and the rest of the information 
+// is the same on all the rows
 function* getOneMovie(action) {
     try {
         const singleMovieResponse = yield axios.get(`/api/genre/${action.payload}`);
@@ -44,7 +50,7 @@ function* getOneMovie(action) {
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();
 
-// Used to store movies returned from the server
+// Used to store all movies returned from the server
 const movies = (state = [], action) => {
     switch (action.type) {
         case 'ALL_MOVIES_FROM_DB':
@@ -64,7 +70,7 @@ const genres = (state = [], action) => {
     }
 }
 
-// used to store movie genres for one movie
+// used to store all of the movie data for one movie
 const individualMovieInfo = (state = [], action) => {
     switch(action.type) {
         case 'ONE_MOVIE_FROM_DB':

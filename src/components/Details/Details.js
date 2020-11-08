@@ -35,7 +35,7 @@ class Details extends Component {
                         Please go the home page and select a movie.</h2>
                     </>
                 }
-                
+                <br/>
                 <button onClick={this.handleClick} className="backBtn">Return to Home Page</button>
                 
             </div>
