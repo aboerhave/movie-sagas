@@ -5,7 +5,9 @@ const pool = require('../modules/pool')
 
 
 router.get('/:id', (req, res) => {
-  // Add query to get all genres for one movie
+  // this query gets all the information for one movie
+  // later, it is used for printing title, poster, and looping through 
+  // for genres
   const queryText = `select * from genres
   join movies_genres 
   on genres.id = movies_genres.genres_id
@@ -17,6 +19,20 @@ router.get('/:id', (req, res) => {
     res.send(result.rows)
   }).catch((error) => {
     console.log('error in getting movie from db', error);
+    res.sendStatus(500);
+  });
+});
+
+// this request gets all the genres that exist in the genres table in 
+// the database
+router.get('/', (req, res) => {
+  
+  const queryText = `select name from genres;`
+  
+  pool.query(queryText).then((result) => {
+    res.send(result.rows)
+  }).catch((error) => {
+    console.log('error in getting genres from db', error);
     res.sendStatus(500);
   });
 });

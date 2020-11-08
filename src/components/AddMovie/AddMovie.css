@@ -1,0 +1,14 @@
+body {
+    color:  rgb(30, 13, 58);
+}
+
+.inputDiv {
+    margin: 30px;
+    background-color: gold;
+    display: inline-block;
+    padding: 10px;
+}
+label {
+    display: inline-block;
+    padding: 10px;
+}   
