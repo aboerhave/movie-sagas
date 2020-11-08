@@ -1,3 +1,6 @@
+// This is the Header.js file for the Week 12 assignment for Prime Digital Academy, created by 
+// Adam Boerhave, 11/5/2020 - 11/8/2020
+
 import React, { Component } from 'react';
 import { HashRouter as Route, Router, Link} from 'react-router-dom'; 
 import './Header.css';
