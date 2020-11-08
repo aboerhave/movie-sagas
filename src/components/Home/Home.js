@@ -24,7 +24,8 @@ class Home extends Component {
     render(){
         return(
             <>
-                <h1>Click a movie for more details</h1>
+                <h2 className="topText">Click a movie image for more details</h2>
+                <br/>
                 {/* {JSON.stringify(this.props.reduxState.movies)} */}
                 {this.props.reduxState.movies.map((movie) => {
                     return (

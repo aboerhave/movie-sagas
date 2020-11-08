@@ -4,7 +4,10 @@ import './Details.css';
 
 class Details extends Component {
     
-    
+    handleClick = () => {
+        this.props.history.push('/');
+    }
+
     render(){
         return(
             <div className="movieDetails">
