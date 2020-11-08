@@ -17,9 +17,13 @@ class AddMovie extends Component {
             title: '',
             poster: '',
             description: '', 
-            genre: ''
+            genre1: '', 
+            genre2: '', 
+            genre3: '',
+            genre4: '',
+            genre5: '',
+            numberOfGenres: 1
         },
-        numberOfGenres: 1
     }
 
     handleChange = (event, typeOfKey) => {
@@ -31,23 +35,29 @@ class AddMovie extends Component {
         });
     }
 
-    handleSelect = (event) => {
+    handleSelect = (event, typeOfKey) => {
         this.setState({
             movie:{
                 ...this.state.movie,
-                genre: event.target.value
+                [typeOfKey]: event.target.value
             }
         })
     }
 
     addGenre = () => {
-        if (this.state.numberOfGenres != 5) {
-        this.setState({numberOfGenres: this.state.numberOfGenres + 1});
+        if (this.state.movie.numberOfGenres != 5) {
+        this.setState({
+            movie:{
+                ...this.state.movie,
+                numberOfGenres: this.state.movie.numberOfGenres + 1}});
         }
     }
 
     removeGenre = () => {
-        this.setState({numberOfGenres: this.state.numberOfGenres - 1});
+        this.setState({
+            movie:{
+                ...this.state.movie,
+                numberOfGenres: this.state.movie.numberOfGenres - 1}});
     }
 
     returnHome = () => {
@@ -55,7 +65,7 @@ class AddMovie extends Component {
     }
 
     submitFunction = () => {
-        if(!this.state.movie.title || !this.state.movie.poster || !this.state.movie.description || this.state.movie.genre == 0) {
+        if(!this.state.movie.title || !this.state.movie.poster || !this.state.movie.description || this.state.movie.genre1 == 0) {
             alert('Please enter all of the information before submitting the movie.')
             return;
         }
@@ -77,7 +87,7 @@ class AddMovie extends Component {
                 <label >Movie Description</label><br/>
                 <textarea onChange={(event)=>this.handleChange(event, 'description')}/><br/>
                 <label >Movie Genre (select up to 5)</label><br/>
-                <select onChange={this.handleSelect}> 
+                <select onChange={(event)=>this.handleSelect(event, "genre1")}> 
                     <option value={0}>Genre</option>
                     {this.props.reduxState.genres.map((genre) => {
                         return (
@@ -85,10 +95,11 @@ class AddMovie extends Component {
                         )
                     })}
                 </select><br/>
-                {this.state.numberOfGenres >= 2 &&
+
+                {this.state.movie.numberOfGenres >= 2 &&
                 <>
-                    <select onChange={this.handleSelect}> 
-                    <option value={0}>Genre</option>
+                    <select onChange={(event)=>this.handleSelect(event, "genre2")}> 
+                    <option value="">Genre</option>
                     {this.props.reduxState.genres.map((genre) => {
                         return (
                             <option key={genre.id} value={genre.id}>{genre.name}</option>
@@ -97,10 +108,11 @@ class AddMovie extends Component {
                     </select><br/>
                 </>
                 }
-                {this.state.numberOfGenres >= 3 &&
+
+                {this.state.movie.numberOfGenres >= 3 &&
                 <>
-                    <select onChange={this.handleSelect}> 
-                    <option value={0}>Genre</option>
+                    <select onChange={(event)=>this.handleSelect(event, "genre3")}> 
+                    <option value="">Genre</option>
                     {this.props.reduxState.genres.map((genre) => {
                         return (
                             <option key={genre.id} value={genre.id}>{genre.name}</option>
@@ -109,10 +121,10 @@ class AddMovie extends Component {
                     </select><br/>
                 </>
                 }
-                {this.state.numberOfGenres >= 4 &&
+                {this.state.movie.numberOfGenres >= 4 &&
                     <>
-                        <select onChange={this.handleSelect}> 
-                        <option value={0}>Genre</option>
+                        <select onChange={(event)=>this.handleSelect(event, "genre4")}> 
+                        <option value="">Genre</option>
                         {this.props.reduxState.genres.map((genre) => {
                             return (
                                 <option key={genre.id} value={genre.id}>{genre.name}</option>
@@ -121,10 +133,10 @@ class AddMovie extends Component {
                         </select><br/>
                     </>
                     }                
-                    {this.state.numberOfGenres >= 5 &&
+                    {this.state.movie.numberOfGenres >= 5 &&
                         <>
-                            <select onChange={this.handleSelect}> 
-                            <option value={0}>Genre</option>
+                            <select onChange={(event)=>this.handleSelect(event, "genre5")}> 
+                            <option value="">Genre</option>
                             {this.props.reduxState.genres.map((genre) => {
                                 return (
                                     <option key={genre.id} value={genre.id}>{genre.name}</option>
@@ -133,10 +145,10 @@ class AddMovie extends Component {
                             </select><br/>
                         </>
                         }   
-                        {this.state.numberOfGenres != 5 &&
+                        {this.state.movie.numberOfGenres != 5 &&
                             <button onClick={this.addGenre}>Add another genre</button>
                         }
-                        {this.state.numberOfGenres > 1 && 
+                        {this.state.movie.numberOfGenres > 1 && 
                             <button onClick={this.removeGenre}>Remove the last genre</button>
                         }
                 {JSON.stringify(this.state)} <br/>

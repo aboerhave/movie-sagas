@@ -65,7 +65,6 @@ function* getAllGenres() {
 function* addMovie(action) {
     try {
         console.log('action.payload', action.payload);
-        
         yield axios.post('/api/movie', action.payload);
     }
     catch (error) {
