@@ -39,6 +39,10 @@ class AddMovie extends Component {
         })
     }
 
+    returnHome = () => {
+        this.props.history.push('/');
+    }
+
     render(){
         return(
             <div className="inputDiv">
@@ -59,7 +63,7 @@ class AddMovie extends Component {
                     })}
                 </select><br/>
                 {/* {JSON.stringify(this.state.movie)} <br/> */}
-                <button className="addMovieButton">Cancel and Return to Home</button>
+                <button className="addMovieButton" onClick={this.returnHome}>Cancel and Return to Home</button>
                 <button className="addMovieButton">Save and Return to Home</button>
             </div>
         )

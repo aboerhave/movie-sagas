@@ -17,6 +17,10 @@
     background-position: center;
 }
 
+.picButton:hover {
+    opacity: 0.65;
+}
+
 .topText {
     display: inline-block;
     background-color: gold;
