@@ -1,3 +1,6 @@
+// This is the AddMovie.js file for the Week 12 assignment for Prime Digital Academy, created by 
+// Adam Boerhave, 11/5/2020 - 11/8/2020
+
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import './AddMovie.css';
@@ -30,7 +33,8 @@ class AddMovie extends Component {
         lastGenre: 1
     }
 
-    // changes text inputs for local state
+    // changes text inputs for local state from the imput box for 
+    // title, picture location, and description
     handleChange = (event, typeOfKey) => {
         this.setState({
             movie:{
@@ -77,7 +81,7 @@ class AddMovie extends Component {
         });
     }
 
-    // fired when cancel button clicked to reset the state and bring it to the home page
+    // fired when cancel button clicked to reset the state and go to the home page
     returnHome = () => {
         this.setState({
             movie: {
@@ -99,17 +103,13 @@ class AddMovie extends Component {
     // submitFunction is called when the save button is clicked to check inputs and, if ok,
     // send the data to the db and return to the homepage
     submitFunction = () => {
-        console.log('this.state.movie.genre1', this.state.movie.genre1);
-        console.log('this.state.movie.genre2', this.state.movie.genre2);
-        console.log('this.state.movie.genre3', this.state.movie.genre3);
         
-        
-        // this part makes sure all the initial data is entered
-        if(!this.state.movie.title || !this.state.movie.poster || !this.state.movie.description || this.state.movie.genre1 == "") {
+        // this part makes sure all the initial data is entered and leaves the function if not
+        if (!this.state.movie.title || !this.state.movie.poster || !this.state.movie.description || this.state.movie.genre1 == "") {
             alert('Please enter all of the information before submitting the movie.')
             return;
         }
-        else {
+        else {   // This giant section checks to see if there are any genre duplicates
             // check for if 5 genres entered to make sure none of the genres are duplicated in the dropdowns
             if (this.state.movie.genre5 != '') {
                 console.log('in genre5');
@@ -121,7 +121,7 @@ class AddMovie extends Component {
                     alert("Make sure the genres are not duplicated");
                     return
                 }
-            }
+            }   // end if for 5 genres
             // check for if 4 genres entered to make sure none of the genres are duplicated in the dropdowns
             else if (this.state.movie.genre4 != '') {
                 console.log('in genre4');
@@ -132,7 +132,7 @@ class AddMovie extends Component {
                     alert("Make sure the genres are not duplicated");
                     return
                 }
-            }
+            }   // end else if for 4 genres
             // check for if 3 genres entered to make sure none of the genres are duplicated in the dropdowns
             else if (this.state.movie.genre3 != '') {
                 console.log('in genre3');
@@ -141,21 +141,21 @@ class AddMovie extends Component {
                     alert("Make sure the genres are not duplicated");
                     return
                 }
-            }
-            // check for if 2 genres entered to make sure none of the genres are duplicated in the dropdowns
+            }   // end else if for 3 genres
+            // check for if 2 genres entered to make sure the genres are duplicated in the dropdowns
             else if (this.state.movie.genre2 != '') {
                 console.log('in genre2');
                 if(this.state.movie.genre1 == this.state.movie.genre2) {
                     alert("Make sure the genres are not duplicated");
                     return
                 }
-            }
+            }   // end else if for 2 genres
             // data should be ok here, and it gets sent to the database
             this.props.dispatch({type: 'ADD_MOVIE', payload: this.state.movie});
-            // put the history push here
+            // history push to go back to the home page
             this.props.history.push('/');
         }
-    }
+    }   // end submit function
 
     render(){
         return(
@@ -177,7 +177,7 @@ class AddMovie extends Component {
                         )
                     })}
                 </select><br/>
-
+                {/* add another drop down if the button is clicked */}
                 {this.state.movie.numberOfGenres >= 2 &&
                     <>
                         <select onChange={(event)=>this.handleSelect(event, "genre2")}> 
@@ -190,7 +190,7 @@ class AddMovie extends Component {
                         </select><br/>
                     </>
                 }
-
+                {/* add another drop down if the button is clicked */}
                 {this.state.movie.numberOfGenres >= 3 &&
                     <>
                         <select onChange={(event)=>this.handleSelect(event, "genre3")}> 
@@ -203,6 +203,7 @@ class AddMovie extends Component {
                         </select><br/>
                     </>
                 }
+                {/* add another drop down if the button is clicked */}
                 {this.state.movie.numberOfGenres >= 4 &&
                     <>
                         <select onChange={(event)=>this.handleSelect(event, "genre4")}> 
@@ -215,6 +216,7 @@ class AddMovie extends Component {
                         </select><br/>
                     </>
                 }                
+                {/* add another drop down if the button is clicked */}
                 {this.state.movie.numberOfGenres >= 5 &&
                     <>
                         <select onChange={(event)=>this.handleSelect(event, "genre5")}> 
@@ -227,21 +229,26 @@ class AddMovie extends Component {
                         </select><br/>
                     </>
                 }   
+                {/* conditional rendering to add a button to add a genre dropdowns until 5 */}
                 {this.state.movie.numberOfGenres != 5 &&
                     <button className="addMovieButton" onClick={this.addGenre}>Add another genre</button>
                 }
+                {/* conditional rendering to add a button to remove a genre dropdown if more than 1 */}
                 {this.state.movie.numberOfGenres > 1 && 
                     <button className="addMovieButton" onClick={this.removeGenre}>Remove the last genre</button>
                 }
                 <br/>
                 {/* {JSON.stringify(this.state)} <br/> */}
+                {/* cancel button */}
                 <button className="addMovieButton" onClick={this.returnHome}>Cancel and Return to Home</button>
+                {/* save button to submit data to db */}
                 <button className="addMovieButton" onClick={this.submitFunction}>Save and Return to Home</button>
             </div>
         )
     }
 }
 
+// Redux
 const mapReduxStateToProps = (reduxState) => ({
     reduxState
 });
