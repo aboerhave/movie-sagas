@@ -13,27 +13,54 @@ class AddMovie extends Component {
     }
 
     state = {
-
+        movie: {
+            title: '',
+            poster: '',
+            description: '', 
+            genre: ''
+        }
     }
+
+    handleChange = (event, typeOfKey) => {
+        this.setState({
+            movie:{
+                ...this.state.movie,
+                [typeOfKey]: event.target.value
+            }
+        });
+    }
+
+    handleSelect = (event) => {
+        this.setState({
+            movie:{
+                ...this.state.movie,
+                genre: event.target.value
+            }
+        })
+    }
+
     render(){
         return(
             <div className="inputDiv">
                 <h1>Add a New Movie:</h1><br/>
                 <label>Movie Title</label><br/>
-                <input type="text" /><br/>
+                <input type="text" onChange={(event)=>this.handleChange(event, 'title')}/><br/>
                 <label>Movie Image Location</label><br/>
-                <input type="text" /><br/>
+                <input type="text" onChange={(event)=>this.handleChange(event, 'poster')}/><br/>
                 <label >Movie Description</label><br/>
-                <textarea /><br/>
+                <textarea onChange={(event)=>this.handleChange(event, 'description')}/><br/>
                 <label >Movie Genre</label><br/>
-                <select> 
-                    <option>Genre</option>
+                <select onChange={this.handleSelect}> 
+                    <option value={0}>Genre</option>
                     {this.props.reduxState.genres.map((genre) => {
                         return (
-                            <option>{genre.name}</option>
+                            <option value={genre.id}>{genre.name}</option>
                         )
                     })}
-                </select>
+                </select><br/>
+                {/* {JSON.stringify(this.state.movie)} <br/> */}
+                <button className="addMovieButton">Cancel and Return to Home</button>
+                <button className="addMovieButton">Save and Return to Home</button>
             </div>
         )
     }
