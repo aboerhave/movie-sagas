@@ -13,6 +13,7 @@ label {
     display: inline-block;
     padding: 10px;
     font-size: 20px;
+    color: rgb(30, 13, 58);
 }   
 
 .addMovieButton {
@@ -36,10 +37,12 @@ select {
 .titleText {
     font-size: 28px;
     margin-bottom: 0;
+    color: rgb(30, 13, 58);
 }
 
 .reqText {
     margin-top: 0;
+    color: rgb(30, 13, 58);
 }
 
 .addMovieInput {
