@@ -3,6 +3,9 @@ import {connect} from 'react-redux';
 
 class AddMovie extends Component {
     
+    state = {
+        
+    }
     render(){
         return(
             <>

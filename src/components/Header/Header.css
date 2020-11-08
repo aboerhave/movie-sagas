@@ -1,0 +1,10 @@
+.navBar {
+    background-color: red;
+}
+
+.navLink {
+    list-style: none;
+    text-decoration: none;
+    float: left;
+    width: 80px;
+}
