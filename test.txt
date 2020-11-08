@@ -13,3 +13,8 @@ description: Danny Ocean is a thief who has just been paroled from prison.  He s
  poster: images/home-alone.jpg
  description: An eight-year-old troublemaker must protect his house from a pair of burglars when he is accidentally left home alone by his family during Christmas vacation. 
  genres: comedy, family
+
+ title: Jurassic Park
+ poster: images/jurassic-park.jpg
+ description: A brilliant entrepreneur invites paleontologists and other guests to preview his new island theme park. During the tour, the guests are amazed to learn genetically recreated dinasaurs are the main attraction. All seems well until a technical glitch allows dangerous raptors and T-Rexes to roam the park freely. Soon the group faces their own extinction.
+ genres: Action, Adventure, Sci-Fi, thriller
