@@ -4,14 +4,17 @@ import './AddMovie.css';
 
 class AddMovie extends Component {
     
+    // page load will call function get genres to use on this component
     componentDidMount = () => {
         this.getGenres();
     }
 
+    // function gets genres from db to use in drop down menus
     getGenres = () => {
         this.props.dispatch({type: 'GET_GENRES'});
     }
 
+    // initial local state for component
     state = {
         movie: {
             title: '',
@@ -27,6 +30,7 @@ class AddMovie extends Component {
         lastGenre: 1
     }
 
+    // changes text inputs for local state
     handleChange = (event, typeOfKey) => {
         this.setState({
             movie:{
@@ -91,11 +95,11 @@ class AddMovie extends Component {
                 <h2 className="titleText">Add a New Movie:</h2><br/>
                 <h4 className="reqText">(All fields are required)</h4>
                 <label>Movie Title</label><br/>
-                <input type="text" onChange={(event)=>this.handleChange(event, 'title')}/><br/>
+                <input className="addMovieInput" type="text" onChange={(event)=>this.handleChange(event, 'title')} placeholder="Title"/><br/>
                 <label>Movie Image Location</label><br/>
-                <input type="text" onChange={(event)=>this.handleChange(event, 'poster')}/><br/>
+                <input className="addMovieInput" type="text" onChange={(event)=>this.handleChange(event, 'poster')} placeholder="Path to Image Location"/><br/>
                 <label >Movie Description</label><br/>
-                <textarea onChange={(event)=>this.handleChange(event, 'description')}/><br/>
+                <textarea onChange={(event)=>this.handleChange(event, 'description')} placeholder="Movie Description"/><br/>
                 <label >Movie Genre (select up to 5)</label><br/>
                 <select onChange={(event)=>this.handleSelect(event, "genre1")}> 
                     <option value={0}>Genre</option>

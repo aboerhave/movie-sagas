@@ -38,3 +38,14 @@ select {
 .reqText {
     margin-top: 0;
 }
+
+.addMovieInput {
+    width: 300px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+textarea {
+    width: 300px;
+    height: 100px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
