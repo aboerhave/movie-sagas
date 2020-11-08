@@ -1,14 +1,20 @@
+/* This is the AddMovie stylesheet file for the Week 12 assignment for Prime Digital Academy, created by 
+Adam Boerhave, 11/5/2020 - 11/8/2020 */
+
+/* text color */
 body {
     color:  rgb(30, 13, 58);
 }
 
+/* style for div to hold all the data entered */
 .inputDiv {
     margin: 30px;
     background-color: gold;
     display: inline-block;
     padding: 10px;
-    /* margin: auto; */
 }
+
+/* style for input labels */
 label {
     display: inline-block;
     padding: 10px;
@@ -16,6 +22,7 @@ label {
     color: rgb(30, 13, 58);
 }   
 
+/* style for buttons on page */
 .addMovieButton {
     font-size: 16px;
     padding: 5px;
@@ -24,32 +31,39 @@ label {
     transition-duration: .5s;
 }
 
+/* change color if button hovered over */
 .addMovieButton:hover {
     background-color: gray;
     color: white;
 }
 
+/* drop down spacing */
 select {
     padding: 3px;
     font-size: 16px;
 }
 
+/* main text style */
 .titleText {
     font-size: 28px;
     margin-bottom: 0;
     color: rgb(30, 13, 58);
 }
 
+/* second line text style */
 .reqText {
     margin-top: 0;
     color: rgb(30, 13, 58);
 }
 
+/* size for input boxes */
 .addMovieInput {
     width: 300px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 16px;
 }
+
+/* size and font for textarea input */
 textarea {
     width: 300px;
     height: 100px;
