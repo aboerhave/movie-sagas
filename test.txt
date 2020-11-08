@@ -1,3 +1,6 @@
+// This is the test.txt file for the Week 12 assignment for Prime Digital Academy, created by 
+// Adam Boerhave, 11/5/2020 - 11/8/2020.  These are movies and data that may be used to test the inputs 
+
 title: Ocean's Eleven
 poster: images/oceans.jpg
 description: Danny Ocean is a thief who has just been paroled from prison.  He seeks out his partner, Rusty and he has a job. And it is to rob the vault that houses the cash of three casinos in Las Vegas. And he plans to rob it on a night when 150 million is in it. So they recruit nine guys and they begin to put Ocean's plan in motion. Everything is going well until Rusty discovers that Ocean's ex-wife, Tess is the main squeeze of Terry Benedict the (ruthless) owner of the casinos. Rusty asks him what is he going to do if he has to choose. But Ocean says that if his plan goes smoothly, he is going to be able to have his cake and eat it.

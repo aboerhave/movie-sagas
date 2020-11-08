@@ -1,3 +1,6 @@
+-- This is the database.sql file for the Week 12 assignment for Prime Digital Academy, created by 
+-- Adam Boerhave, 11/5/2020 - 11/8/2020
+
 CREATE TABLE "movies" (
   "id" SERIAL PRIMARY KEY,
   "title" VARCHAR(120) NOT NULL,
@@ -48,7 +51,7 @@ VALUES
 ('Comedy'),
 ('Crime'),
 ('Drama'),
-('family'),
+('Family'),
 ('Fantasy'),
 ('Musical'),
 ('Mystery'),
@@ -71,17 +74,17 @@ create table "movies_genres" (
 -- this fist part means the movie_id = 1, which is Avatar, is associated with genre_id 1, 2, 8, and 12, action, adventure, fantasy and science-fiction 
 insert into "movies_genres" ("movies_id", "genres_id")
 values 
-(1, 1), (1, 2), (1, 8), (1, 12), 
-(2, 7), (2, 8), (2, 9), (2, 11), 
-(3, 1), (3, 2), (3, 12), 
-(4, 2), (4, 3), (4, 5), (4, 7), 
-(5, 6), (5, 9), (5, 13), 
-(6, 2), (6, 7), (6, 8), 
-(7, 1), (7, 2), (7, 13), 
-(8, 2), (8, 6), (8, 8), 
-(9, 2), (9, 3), (9, 5), (9, 7), (9, 8), 
-(10, 1), (10, 2), (10, 8), (10, 12), 
-(11, 2), (11, 6), (11, 12), 
-(12, 4), (12, 6),
-(13, 6), (13, 11),
-(14, 2), (14, 3), (14, 5), (14, 7), (14, 8);
+(1, 1), (1, 2), (1, 9), (1, 13), 
+(2, 8), (2, 9), (2, 10), (2, 13), 
+(3, 1), (3, 2), (3, 13), 
+(4, 2), (4, 3), (4, 5), (4, 8), 
+(5, 6), (5, 10), (5, 14), 
+(6, 2), (6, 8), (6, 9), 
+(7, 1), (7, 2), (7, 14), 
+(8, 2), (8, 7), (8, 9), 
+(9, 2), (9, 3), (9, 5), (9, 8), (9, 9), 
+(10, 1), (10, 2), (10, 9), (10, 13), 
+(11, 2), (11, 6), (11, 13), 
+(12, 4), (12, 7),
+(13, 7), (13, 12),
+(14, 2), (14, 3), (14, 5), (14, 8), (14, 9);
