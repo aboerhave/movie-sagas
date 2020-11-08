@@ -47,4 +47,9 @@
     padding: 5px;
     background-color: silver;
     margin-bottom: 30px;
+    transition-duration: .5s;
+}
+
+.backBtn:hover {
+    background-color: gray;
 }

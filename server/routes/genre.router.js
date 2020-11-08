@@ -27,7 +27,7 @@ router.get('/:id', (req, res) => {
 // the database
 router.get('/', (req, res) => {
   
-  const queryText = `select * from genres;`
+  const queryText = `select * from genres order by id asc;`
   
   pool.query(queryText).then((result) => {
     res.send(result.rows)

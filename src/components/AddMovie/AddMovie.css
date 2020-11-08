@@ -24,3 +24,11 @@ select {
     padding: 3px;
     font-size: 12px;
 }
+
+.titleText {
+    margin-bottom: 0;
+}
+
+.reqText {
+    margin-top: 0;
+}

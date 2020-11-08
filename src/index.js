@@ -17,6 +17,7 @@ function* rootSaga() {
     yield takeEvery("GET_ALL_MOVIES", getMovies);
     yield takeEvery('GET_ONE_MOVIE', getOneMovie);
     yield takeEvery('GET_GENRES', getAllGenres);
+    yield takeEvery('ADD_MOVIE', addMovie);
 }
 
 // this function gets all the movies from the database, but only includes id,
@@ -57,6 +58,19 @@ function* getAllGenres() {
     }
     catch (error) {
         console.log('error in getAllGenres function');        
+    }
+}
+
+// function to add the new movie inputted into the database
+function* addMovie(action) {
+    try {
+        console.log('action.payload', action.payload);
+        
+        yield axios.post('/api/movie', action.payload);
+    }
+    catch (error) {
+        console.log('error in add movie fn', error);
+        
     }
 }
 

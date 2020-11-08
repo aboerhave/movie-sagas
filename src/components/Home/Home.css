@@ -15,6 +15,7 @@
     height: 280px;
     background-size: cover;
     background-position: center;
+    transition-duration: .5s;
 }
 
 .picButton:hover {
