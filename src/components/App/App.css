@@ -1,9 +1,10 @@
+/* center the content and set font size for entire app */
 .App {
   text-align: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-
+/* color and size for header */
 .App-header {
   background-color: silver;
   height: 85px;
@@ -11,6 +12,7 @@
   color: rgb(30, 13, 58);
 }
 
+/* spacing for header text */
 .App-title {
   margin: 15px;
 }
@@ -19,6 +21,7 @@
   font-size: large;
 }
 
+/* makes the background image film for all the pages */
 body {
   background-image: url('/images/film.jpg');
 }
