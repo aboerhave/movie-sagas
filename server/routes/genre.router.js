@@ -1,9 +1,13 @@
-// const { default: Axios } = require('axios');
+// This is the genre.router.js file for the Week 12 assignment for Prime Digital Academy, created by 
+// Adam Boerhave, 11/5/2020 - 11/8/2020
+
 const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool')
 
-
+// get request to get the information assocaited with one movie 
+// including the genres associated with it.  It returns as many rows as 
+// genres
 router.get('/:id', (req, res) => {
   // this query gets all the information for one movie
   // later, it is used for printing title, poster, and looping through 

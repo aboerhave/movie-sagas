@@ -1,7 +1,11 @@
+// This is the movie.router.js file for the Week 12 assignment for Prime Digital Academy, created by 
+// Adam Boerhave, 11/5/2020 - 11/8/2020
+
 const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool')
 
+// post route to add a new movie that is submitted
 router.post('/', (req, res) => {
   console.log(req.body);
   // RETURNING "id" will give us back the id of the created movie
@@ -18,9 +22,10 @@ router.post('/', (req, res) => {
      
     console.log('req.body.numberOfGenres', req.body.numberOfGenres);
     
-    
+    // this part lets up to 5 genres be added with the movie
     let insertMovieGenreQuery = '';
     switch(req.body.numberOfGenres) {
+      // if one genre  
       case 1: 
         insertMovieGenreQuery = `
         insert into movies_genres (movies_id, genres_id)
@@ -36,6 +41,7 @@ router.post('/', (req, res) => {
           res.sendStatus(500)
         });    
         break;
+      // if two genres
       case 2:
         insertMovieGenreQuery = `
         insert into movies_genres (movies_id, genres_id)
@@ -50,6 +56,7 @@ router.post('/', (req, res) => {
           res.sendStatus(500)
         });    
         break;
+      // if three genres
       case 3:
         insertMovieGenreQuery = `
         insert into movies_genres (movies_id, genres_id)
@@ -64,6 +71,7 @@ router.post('/', (req, res) => {
           res.sendStatus(500)
         })    
         break;
+      // if four genres
       case 4:
         insertMovieGenreQuery = `
         insert into movies_genres (movies_id, genres_id)
@@ -77,7 +85,8 @@ router.post('/', (req, res) => {
           console.log(err);
           res.sendStatus(500)
         });    
-          break;
+        break;
+      // if five genres  
       case 5:
         insertMovieGenreQuery = `
         insert into movies_genres (movies_id, genres_id)
@@ -99,6 +108,7 @@ router.post('/', (req, res) => {
   })  // end of first query catch
 })  // end of entire post
 
+//  get request for all the movies in the database i
 router.get('/', (req,res) => {
   let queryText = `select * from movies order by title asc;`;
   pool.query(queryText).then((result) => {

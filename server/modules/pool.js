@@ -1,3 +1,6 @@
+// This is the pool.js file for the Week 12 assignment for Prime Digital Academy, created by 
+// Adam Boerhave, 11/5/2020 - 11/8/2020
+
 /**
 * You'll need to use environment variables in order to deploy your
 * pg-pool configuration to Heroku.
