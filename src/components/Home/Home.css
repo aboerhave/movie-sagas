@@ -1,3 +1,7 @@
+/* This is the Home stylesheet for the Week 12 assignment for Prime Digital Academy, created by 
+Adam Boerhave, 11/5/2020 - 11/8/2020 */
+
+/* style for card with image and title */
 .card {
     display: inline-block;
     width: 250px;
@@ -18,10 +22,12 @@
     transition-duration: .5s;
 }
 
+/* putting mouse over image changes opacity */
 .picButton:hover {
     opacity: 0.5;
 }
 
+/* text style for text at top of home page */
 .topText {
     display: inline-block;
     background-color: gold;
