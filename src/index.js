@@ -1,3 +1,7 @@
+// This is the Index.js file for the Week 12 assignment for Prime Digital Academy, created by 
+// Adam Boerhave, 11/5/2020 - 11/8/2020
+
+// imports
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -12,7 +16,7 @@ import createSagaMiddleware from 'redux-saga';
 import {put, takeEvery} from 'redux-saga/effects';
 import axios from 'axios';
 
-// Create the rootSaga generator function
+// Create the rootSaga generator function to watch for dispatches from client
 function* rootSaga() {
     yield takeEvery("GET_ALL_MOVIES", getMovies);
     yield takeEvery('GET_ONE_MOVIE', getOneMovie);
@@ -21,7 +25,8 @@ function* rootSaga() {
 }
 
 // this function gets all the movies from the database, but only includes id,
-// title, poster address, and description text
+// title, poster address, and description text as those are all that come from the
+// sq;l query
 function* getMovies() {
     try {
         const allMovieResponse = yield axios.get('/api/movie');
@@ -49,7 +54,7 @@ function* getOneMovie(action) {
     }
 }
 
-// function to get genres from database
+// function to get all the genres from database
 function* getAllGenres() {
     try {
         const genresResponse = yield axios.get('/api/genre');
