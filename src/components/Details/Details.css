@@ -35,6 +35,8 @@
 .detailImg {
     width: 278px;
     height: 424px;
+    border: 4px solid gold;
+
 }
 
 .backBtn {

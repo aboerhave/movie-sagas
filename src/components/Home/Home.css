@@ -4,24 +4,17 @@
     height: 400px;
     background-color: silver;
     border: 4px solid gold;
-    /* margin: auto; */
-    /* position: relative; */
     vertical-align: top;
     margin: 20px;
 }
 
-
+/* style for image picture button */
+/* image is inserted in the loop in Home.js */
 .picButton {
     width: 185px;
     height: 280px;
-    /* background-color: silver; */
-    position: relative;
-    /* border: 1px solid white; */
-    /* background: transparent; */
-    /* visibility: hidden; */
     background-size: cover;
     background-position: center;
-
 }
 
 .topText {
