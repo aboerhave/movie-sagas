@@ -4,6 +4,7 @@ import './App.css';
 import Home from '../Home/Home';
 import Details from '../Details/Details';
 import AddMovie from '../AddMovie/AddMovie';
+import Header from '../Header/Header';
 
 class App extends Component {
   // Renders the entire app on the DOM
@@ -11,7 +12,7 @@ class App extends Component {
     return (
         <Router>
           <div className="App">
-          <h1>Movies!</h1>
+          <Header />
           {/* Only the Home component displays at exact path /
           The rest are the paths for later */}
           <Route exact path='/' component={Home} />
