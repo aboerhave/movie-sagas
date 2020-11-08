@@ -24,6 +24,7 @@ class AddMovie extends Component {
             genre5: '',
             numberOfGenres: 1
         },
+        lastGenre: 1
     }
 
     handleChange = (event, typeOfKey) => {
@@ -49,15 +50,24 @@ class AddMovie extends Component {
         this.setState({
             movie:{
                 ...this.state.movie,
-                numberOfGenres: this.state.movie.numberOfGenres + 1}});
-        }
-    }
+                numberOfGenres: this.state.movie.numberOfGenres + 1
+            },
+            lastGenre: this.state.lastGenre + 1
+        })
+    }}
 
     removeGenre = () => {
+        let genreToRemove ='genre' + this.state.lastGenre;
+        console.log('genreToRemove', genreToRemove);
+        
         this.setState({
             movie:{
                 ...this.state.movie,
-                numberOfGenres: this.state.movie.numberOfGenres - 1}});
+                numberOfGenres: this.state.movie.numberOfGenres - 1,
+                [genreToRemove]: ''
+            },
+            lastGenre: this.state.lastGenre - 1
+        });
     }
 
     returnHome = () => {
@@ -97,29 +107,29 @@ class AddMovie extends Component {
                 </select><br/>
 
                 {this.state.movie.numberOfGenres >= 2 &&
-                <>
-                    <select onChange={(event)=>this.handleSelect(event, "genre2")}> 
-                    <option value="">Genre</option>
-                    {this.props.reduxState.genres.map((genre) => {
-                        return (
-                            <option key={genre.id} value={genre.id}>{genre.name}</option>
-                        )
-                    })}
-                    </select><br/>
-                </>
+                    <>
+                        <select onChange={(event)=>this.handleSelect(event, "genre2")}> 
+                        <option value="">Genre</option>
+                        {this.props.reduxState.genres.map((genre) => {
+                            return (
+                                <option key={genre.id} value={genre.id}>{genre.name}</option>
+                            )
+                        })}
+                        </select><br/>
+                    </>
                 }
 
                 {this.state.movie.numberOfGenres >= 3 &&
-                <>
-                    <select onChange={(event)=>this.handleSelect(event, "genre3")}> 
-                    <option value="">Genre</option>
-                    {this.props.reduxState.genres.map((genre) => {
-                        return (
-                            <option key={genre.id} value={genre.id}>{genre.name}</option>
-                        )
-                    })}
-                    </select><br/>
-                </>
+                    <>
+                        <select onChange={(event)=>this.handleSelect(event, "genre3")}> 
+                        <option value="">Genre</option>
+                        {this.props.reduxState.genres.map((genre) => {
+                            return (
+                                <option key={genre.id} value={genre.id}>{genre.name}</option>
+                            )
+                        })}
+                        </select><br/>
+                    </>
                 }
                 {this.state.movie.numberOfGenres >= 4 &&
                     <>
@@ -132,25 +142,25 @@ class AddMovie extends Component {
                         })}
                         </select><br/>
                     </>
-                    }                
-                    {this.state.movie.numberOfGenres >= 5 &&
-                        <>
-                            <select onChange={(event)=>this.handleSelect(event, "genre5")}> 
-                            <option value="">Genre</option>
-                            {this.props.reduxState.genres.map((genre) => {
-                                return (
-                                    <option key={genre.id} value={genre.id}>{genre.name}</option>
-                                )
-                            })}
-                            </select><br/>
-                        </>
-                        }   
-                        {this.state.movie.numberOfGenres != 5 &&
-                            <button className="addMovieButton" onClick={this.addGenre}>Add another genre</button>
-                        }
-                        {this.state.movie.numberOfGenres > 1 && 
-                            <button className="addMovieButton" onClick={this.removeGenre}>Remove the last genre</button>
-                        }
+                }                
+                {this.state.movie.numberOfGenres >= 5 &&
+                    <>
+                        <select onChange={(event)=>this.handleSelect(event, "genre5")}> 
+                        <option value="">Genre</option>
+                        {this.props.reduxState.genres.map((genre) => {
+                            return (
+                                <option key={genre.id} value={genre.id}>{genre.name}</option>
+                            )
+                        })}
+                        </select><br/>
+                    </>
+                }   
+                {this.state.movie.numberOfGenres != 5 &&
+                    <button className="addMovieButton" onClick={this.addGenre}>Add another genre</button>
+                }
+                {this.state.movie.numberOfGenres > 1 && 
+                    <button className="addMovieButton" onClick={this.removeGenre}>Remove the last genre</button>
+                }
                 {JSON.stringify(this.state)} <br/>
                 <button className="addMovieButton" onClick={this.returnHome}>Cancel and Return to Home</button>
                 <button className="addMovieButton" onClick={this.submitFunction}>Save and Return to Home</button>

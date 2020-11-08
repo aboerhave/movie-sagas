@@ -46,6 +46,7 @@ VALUES
 ('Animated'),
 ('Biography'),
 ('Comedy'),
+('Crime'),
 ('Drama'),
 ('family'),
 ('Fantasy'),

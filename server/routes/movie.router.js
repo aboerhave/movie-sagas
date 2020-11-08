@@ -105,7 +105,7 @@ router.post('/', (req, res) => {
 })  // end of entire post
 
 router.get('/', (req,res) => {
-  let queryText = `select * from movies;`;
+  let queryText = `select * from movies order by title asc;`;
   pool.query(queryText).then((result) => {
     res.send(result.rows);
     
