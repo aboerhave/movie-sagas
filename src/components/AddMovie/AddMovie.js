@@ -42,7 +42,7 @@ class AddMovie extends Component {
     render(){
         return(
             <div className="inputDiv">
-                <h1>Add a New Movie:</h1><br/>
+                <h2>Add a New Movie:</h2><br/>
                 <label>Movie Title</label><br/>
                 <input type="text" onChange={(event)=>this.handleChange(event, 'title')}/><br/>
                 <label>Movie Image Location</label><br/>
