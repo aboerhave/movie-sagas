@@ -9,12 +9,11 @@
   height: 85px;
   padding: 20px;
   color: rgb(30, 13, 58);
-  /* color: rgb(187, 87, 20); */
 }
 
-/* .App-title {
-  font-size: 1.5em;
-} */
+.App-title {
+  margin: 15px;
+}
 
 .App-intro {
   font-size: large;
@@ -22,5 +21,4 @@
 
 body {
   background-image: url('/images/film.jpg');
-  /* background-size: cover; */
 }
