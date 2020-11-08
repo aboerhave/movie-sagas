@@ -13,6 +13,7 @@ class App extends Component {
         <Router>
           <div className="App">
           <Header />
+          <br/>
           {/* Only the Home component displays at exact path /
           The rest are the paths for later */}
           <Route exact path='/' component={Home} />

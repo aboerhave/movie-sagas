@@ -16,11 +16,6 @@ router.post('/', (req, res) => {
     console.log('New Movie Id:', result.rows[0].id); //ID IS HERE!
     const createdMovieId = result.rows[0].id;
      
-    // console.log('req.body.genre1', req.body.genre1);
-    // console.log('req.body.genre2', req.body.genre2);
-    // console.log('req.body.genre3', req.body.genre3);
-    // console.log('req.body.genre4', req.body.genre4);
-    // console.log('req.body.genre5', req.body.genre5);
     console.log('req.body.numberOfGenres', req.body.numberOfGenres);
     
     
