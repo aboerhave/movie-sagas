@@ -1,16 +1,21 @@
+/* This is the Details stylesheet file for the Week 12 assignment for Prime Digital Academy, created by 
+Adam Boerhave, 11/5/2020 - 11/8/2020 */
+
+/* style for genres below image */
 .movieGenre {
     display: inline-block;
     padding: 5px 15px;
     background-color: gold;
     color: rgb(30, 13, 58);
-
 }
 
+/* spacing for entire page */
 .movieDetails {
     width: 90%;
     margin: auto;
 }
 
+/* style for text that appears if no movie selected */
 .errorText {
     background-color: gold;
     color: rgb(30, 13, 58);
@@ -18,27 +23,29 @@
     padding: 6px;
 }
 
+/* style for details section below image */
 .desc {
     background-color: gold;
     color: rgb(30, 13, 58);
     padding: 8px;
 }
 
+/* style for title of movie above image */
 .movieTitle {
     display: inline-block;
     background-color: gold;
     color: rgb(30, 13, 58);
     padding: 8px;
-
 }
 
+/* size and border for image */
 .detailImg {
     width: 278px;
     height: 424px;
     border: 4px solid gold;
-
 }
 
+/* style for back button */
 .backBtn {
     float: left;
     left: 20px;
@@ -50,6 +57,7 @@
     transition-duration: .5s;
 }
 
+/* change color of button if mouse hovers over it */
 .backBtn:hover {
     background-color: gray;
     color: white;
